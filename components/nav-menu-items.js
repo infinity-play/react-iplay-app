@@ -16,7 +16,7 @@ class ButtonMenu extends React.Component {
   ButtonRoute(mode){
     switch(mode){
       case "default": return "Settings";
-      default: "Home";
+      default: return false;
     }
   }
 
@@ -33,7 +33,7 @@ class ButtonMenu extends React.Component {
             />
           }
           onPress={
-            this.props.mode === "menu"?
+            this.ButtonRoute(this.props.mode) === false?
             () => this.props.navigation.goBack():
             () => navigate(this.ButtonRoute(this.props.mode))
           }  
