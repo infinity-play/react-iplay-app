@@ -1,22 +1,15 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import NavMenu from './components/navmenu';
+import {createStackNavigator, createAppContainer} from 'react-navigation';
+import HomeScreen from './screens/HomeScreen';
+import SettingsScreen from './screens/SettingsScreen';
 
-
-export default class App extends React.Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <NavMenu/>      
-      </View>
-    );
-  }
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2289DC',
-    alignItems: 'center',
-  },
+const MainNavigator = createStackNavigator({
+  Home: {screen: HomeScreen},
+  Settings: {screen: SettingsScreen},
+},{
+  initialRouteName: 'Home',
+  headerMode: "none",
 });
+
+const App = createAppContainer(MainNavigator);
+
+export default App;

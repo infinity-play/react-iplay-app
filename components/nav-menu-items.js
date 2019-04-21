@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Image } from 'react-native';
-import { Button, Icon, SearchBar } from 'react-native-elements';
+import { withNavigation } from 'react-navigation';
+import { Button, Icon, SearchBar } from 'react-native-elements'; 
+
 
 class ButtonMenu extends React.Component {
 
@@ -11,17 +13,30 @@ class ButtonMenu extends React.Component {
     }
   }
 
+  ButtonRoute(mode){
+    switch(mode){
+      case "default": return "Settings";
+      default: "Home";
+    }
+  }
+
   render() {
+    const { navigate } = this.props.navigation;
     return (
       <Button
+          type="clear"
           icon={
             <Icon
               name={this.ButtonIcon(this.props.mode)}
-              size={32}
+              size={32} 
               color="#333"
             />
           }
-          type="clear"
+          onPress={
+            this.props.mode === "menu"?
+            () => this.props.navigation.goBack():
+            () => navigate(this.ButtonRoute(this.props.mode))
+          }  
         />
     );
   }
@@ -86,10 +101,10 @@ const styles = StyleSheet.create({
   },
 });
 
+export default withNavigation(ButtonMenu);
 
 export{
   MySearchBar,
   MyButton,
-  ButtonMenu,
   Logo,
 }
