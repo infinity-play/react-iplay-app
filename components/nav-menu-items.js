@@ -5,37 +5,18 @@ import { Button, Icon, SearchBar } from 'react-native-elements';
 
 
 class ButtonMenu extends React.Component {
-
-  ButtonIcon(mode){
-    switch(mode){
-      case "menu": return "arrow-forward";
-      case "default": return "menu";
-    }
-  }
-
-  ButtonRoute(mode){
-    switch(mode){
-      case "default": return "Settings";
-      default: return false;
-    }
-  }
-
   render() {
     const { navigate } = this.props.navigation;
     return (
       <Button
           type="clear"
+          onPress={() => navigate("Settings")}
           icon={
             <Icon
-              name={this.ButtonIcon(this.props.mode)}
+              name="menu"
               size={32} 
               color="#333"
             />
-          }
-          onPress={
-            this.ButtonRoute(this.props.mode) === false?
-            () => this.props.navigation.goBack():
-            () => navigate(this.ButtonRoute(this.props.mode))
           }  
         />
     );
@@ -57,7 +38,7 @@ class Logo extends React.Component {
   render() {
     return (
       <Image 
-        style={styles.logo}
+        style={{width: 32, height: 32}}
         source={require('../assets/images/icon-md.png')}
       />
     );
@@ -90,10 +71,6 @@ class MySearchBar extends React.Component {
 }
 
 const styles = StyleSheet.create({
-  logo: {
-    width: 32,
-    height: 32,
-  },
   search:{
     width: 130, 
     height: 32, 

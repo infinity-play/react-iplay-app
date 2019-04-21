@@ -1,22 +1,19 @@
 import React from 'react';
-import { StyleSheet, View } from 'react-native';
-import NavMenu from '../components/navmenu';
+import { Text } from 'react-native';
+import ButtonMenu, { Logo, MySearchBar } from '../components/nav-menu-items';
 
 export default class HomeScreen extends React.Component {
+  static navigationOptions = {
+    headerLeft: <ButtonMenu/>,
+    headerTitle: <Logo/>,
+    headerRight: <MySearchBar/>
+  };
+
   render() {
     return (
-      <View style={styles.container}> 
-        <NavMenu mode="default"/>
-      </View>
+      <Text>Hello World</Text>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2289DC',
-    alignItems: 'center',
-  },
-});
 

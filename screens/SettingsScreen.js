@@ -1,22 +1,48 @@
 import React from 'react';
 import { StyleSheet, View } from 'react-native';
-import NavMenu from '../components/navmenu';
+import { withNavigation } from 'react-navigation';
+import { ListItem } from 'react-native-elements';
 
-export default class SettingsScreen extends React.Component {
-  render() {
+
+class SettingsScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Settings',
+  };  
+  render () {
+    const { navigate } = this.props.navigation;
+    const list = [
+      {
+        title: 'Sign in',
+        icon: 'rest',
+        route: 'About',
+      },
+      {
+        title: 'About us',
+        icon: 'infocirlceo',
+        route: 'About',
+      },
+    ];  
+
     return (
-      <View style={styles.container}> 
-        <NavMenu mode="menu"/>
+      <View>
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.title}
+              leftIcon={{ name: item.icon, type: 'antdesign'}}
+              onPress={() => navigate(item.route)}
+            />
+          ))
+        }
       </View>
-    );
+
+    )
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#2289DC',
-    alignItems: 'center',
-  },
-});
 
+
+
+
+export default withNavigation(SettingsScreen);
