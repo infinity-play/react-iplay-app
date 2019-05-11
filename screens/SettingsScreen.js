@@ -14,7 +14,7 @@ class SettingsScreen extends React.Component {
       {
         title: 'Sign in',
         icon: 'rest',
-        route: 'About',
+        route: 'Login',
       },
       {
         title: 'About us',
