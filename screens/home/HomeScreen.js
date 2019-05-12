@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, View } from 'react-native';
-import ButtonMenu, { Logo, MySearchBar } from '../components/nav-menu-items';
+import ButtonMenu, { Logo, MySearchBar } from '../../components/nav-menu-items';
 import { Button } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
 
