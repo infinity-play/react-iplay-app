@@ -1,8 +1,10 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 import ButtonMenu, { Logo, MySearchBar } from '../components/nav-menu-items';
+import { Button } from 'react-native-elements';
+import { withNavigation } from 'react-navigation';
 
-export default class HomeScreen extends React.Component {
+class HomeScreen extends React.Component {
   static navigationOptions = {
     headerLeft: <ButtonMenu/>,
     headerTitle: <Logo/>,
@@ -10,10 +12,19 @@ export default class HomeScreen extends React.Component {
   };
 
   render() {
+    const { navigate } = this.props.navigation;
     return (
-      <Text>Hello World</Text>
+      <View>
+        
+        <Button
+            title="Teste-me"
+            onPress={() => navigate("View")}
+              
+          />
+      </View>
     );
   }
 }
 
+export default withNavigation(HomeScreen);
 
