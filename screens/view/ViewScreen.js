@@ -1,8 +1,8 @@
 import React from 'react';
-import { View } from 'react-native';
 import { Tile } from 'react-native-elements';
-import { withNavigation } from 'react-navigation';
-import ViewTab from './Tab';
+import { View } from 'react-native';
+
+
 
 
 class ViewScreen extends React.Component {
@@ -18,12 +18,11 @@ class ViewScreen extends React.Component {
           icon={{ name: 'play-circle', type: 'font-awesome', color: '#FFF', size: 64 }}
           featured
         />
-        <ViewTab/>
+        
       </View>
-
     );
   }
 }
 
 
-export default withNavigation(ViewScreen);
+export default ViewScreen;

@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import ButtonMenu, { Logo, MySearchBar } from '../../components/nav-menu-items';
-import { Button } from 'react-native-elements';
 import { withNavigation } from 'react-navigation';
+import { ScrollView } from 'react-native-gesture-handler';
+import ItemHome from './ItemHome';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -13,18 +14,57 @@ class HomeScreen extends React.Component {
 
   render() {
     const { navigate } = this.props.navigation;
+    const videos = [
+      {
+        title: "my video",
+        description: "lorem",
+        views: '5.000',
+        creator: 'Neil'
+      },
+      {
+        title: "my video",
+        description: "lorem",
+        views: '5.000',
+        creator: 'Neil'
+      },
+      {
+        title: "my video",
+        description: "lorem",
+        views: '5.000',
+        creator: 'Neil'
+      },
+      {
+        title: "my video",
+        description: "lorem",
+        views: '5.000',
+        creator: 'Neil'
+      }
+    ];
     return (
-      <View>
-        
-        <Button
-            title="Teste-me"
-            onPress={() => navigate("View")}
-              
-          />
-      </View>
+      <ScrollView style={styles.background}>
+        {
+          videos.map((video, i) => (
+            <ItemHome 
+              title={video.title}
+              description={video.description}
+              views={video.views}
+              creator={video.creator}
+              key={i}
+              id={i}              
+            />
+          ))            
+        }
+      </ScrollView>
     );
   }
 }
+
+const styles = StyleSheet.create({
+  background:{
+    backgroundColor: '#f9f9f9',
+  },
+});
+
 
 export default withNavigation(HomeScreen);
 
