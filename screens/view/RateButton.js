@@ -8,8 +8,8 @@ export default class RateButton extends React.Component {
     const rateList = ['Horrible', 'Bad', 'Good', 'Great', 'Awesome'];  
     return (
         <MultiBarToggle
-        actionSize={32}
-        toggleSize={80}
+        actionSize={30}
+        toggleSize={60}
         animateIcon={false}
         routes={
             rateList.map((rate, i) => (
@@ -26,7 +26,7 @@ export default class RateButton extends React.Component {
         }
         icon={(
             <Icon
-                name="plus"
+                name="star"
                 color="#FFFFFF"
                 size={24}
             />

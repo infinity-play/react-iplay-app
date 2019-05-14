@@ -1,9 +1,10 @@
 import React from 'react';
 import { Tile } from 'react-native-elements';
 import { View, Text } from 'react-native';
-//import { background } from '../../assets/Styles';
 import videos from '../../assets/Videos';
-
+import { ScrollView } from 'react-native-gesture-handler';
+import { flex, spaceBetween } from '../../assets/Styles';
+import Footer from './Footer';
 
 
 
@@ -17,13 +18,16 @@ class ViewScreen extends React.Component {
     const id = navigation.getParam('id', 0);
     const video = videos[id];
     return (
-      <View>
+      <View style={[flex, spaceBetween]}>
         <Tile
           imageSrc={video.thumb}
           icon={{ name: 'play-circle', type: 'font-awesome', color: '#FFF', size: 64 }}
           featured
         />
-        <Text>{video.title}</Text>
+        <ScrollView>
+
+        </ScrollView>
+        <Footer/>
       </View>
     );
   }

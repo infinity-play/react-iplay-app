@@ -15,6 +15,9 @@ const fullWidth = {
 const fullHeight = {
   height: '100%'
 };
+const spaceBetween = {
+  justifyContent: 'space-between',
+};
 
 const center = {
   justifyContent: 'center'
@@ -62,9 +65,24 @@ const styles = StyleSheet.create({
       flexDirection: 'column',
       justifyContent: 'space-around',
       alignItems: 'center'
-    }
+    },
     //----------------------------------
-
+    footer:{
+      flex: 0.16,
+      paddingHorizontal: 15,
+      backgroundColor: '#383838',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center',
+    },
   });
   
-export  { background, styles, flex, fullWidth, fullHeight, center }
+export  { 
+  background, 
+  flex,
+  fullWidth,
+  fullHeight,
+  spaceBetween,
+  center,
+  styles
+}

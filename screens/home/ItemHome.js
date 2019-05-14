@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { styles } from '../../assets/Styles';
 
+
 class ItemHome extends React.Component {
   render() {
     const styleVideo = (this.props.id%2==0)? [styles.video,styles.videoOdd]:styles.video;
