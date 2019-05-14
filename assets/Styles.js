@@ -57,10 +57,11 @@ const styles = StyleSheet.create({
     //----------------------------------
     login:{
       flex: 1,
-      marginVertical: '20%',
+      marginTop: '10%',
+      marginBottom: '30%',
       flexDirection: 'column',
       justifyContent: 'space-around',
-      alignItems: 'center',
+      alignItems: 'center'
     }
     //----------------------------------
 
