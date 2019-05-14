@@ -10,9 +10,24 @@ const flex = {
 
 const fullWidth = {
   width: '100%',
-}
+};
+
+const fullHeight = {
+  height: '100%'
+};
+
+const center = {
+  justifyContent: 'center'
+};
 
 const styles = StyleSheet.create({
+    //----------------------------------
+    main:{
+      width: 220,
+      height: 80,
+      marginHorizontal: 5,   
+    },
+    //----------------------------------
     video:{
       flex: 1,
       flexDirection: 'row',
@@ -26,11 +41,6 @@ const styles = StyleSheet.create({
       flex: 1,
       height: 'auto',
     },
-    main:{
-      width: 220,
-      height: 80,
-      marginHorizontal: 5,   
-    },
     info:{
       flex: 1,
       flexDirection: 'row',
@@ -42,11 +52,12 @@ const styles = StyleSheet.create({
       color: '#999',
     },
     title: {
-        fontSize: 24,
+      fontSize: 24,
     },
     //----------------------------------
     login:{
       flex: 1,
+      marginVertical: '20%',
       flexDirection: 'column',
       justifyContent: 'space-around',
       alignItems: 'center',
@@ -55,4 +66,4 @@ const styles = StyleSheet.create({
 
   });
   
-export  { background, styles, flex, fullWidth }
+export  { background, styles, flex, fullWidth, fullHeight, center }

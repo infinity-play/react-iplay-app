@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Input, Button } from 'react-native-elements';
 import { Logo } from '../../components/nav-menu-items';
-import { background, flex, styles, fullWidth } from '../../assets/Styles';
+import { background, flex, styles, fullWidth, center } from '../../assets/Styles';
 
 export default class LoginScreen extends React.Component {
     static navigationOptions = {
