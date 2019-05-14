@@ -1,6 +1,8 @@
 import React from 'react';
 import { Tile } from 'react-native-elements';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
+//import { background } from '../../assets/Styles';
+import videos from '../../assets/Videos';
 
 
 
@@ -11,14 +13,17 @@ class ViewScreen extends React.Component {
     };  
 
   render() {
+    const { navigation } = this.props;
+    const id = navigation.getParam('id', 0);
+    const video = videos[id];
     return (
       <View>
         <Tile
-          imageSrc={require('../../assets/images/neil.jpg')}
+          imageSrc={video.thumb}
           icon={{ name: 'play-circle', type: 'font-awesome', color: '#FFF', size: 64 }}
           featured
         />
-        
+        <Text>{video.title}</Text>
       </View>
     );
   }
