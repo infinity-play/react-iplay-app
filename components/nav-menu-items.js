@@ -36,14 +36,20 @@ class MyButton extends React.Component {
 
 class Logo extends React.Component {
   render() {
+    const size = {width: this.props.size, height: this.props.size};
     return (
       <Image 
-        style={{width: 32, height: 32}}
+        style={size}
         source={require('../assets/images/icon-md.png')}
       />
     );
   }
 }
+
+Logo.defaultProps = {
+  size: 32
+};
+
 
 class MySearchBar extends React.Component {
   state = {
@@ -71,6 +77,10 @@ class MySearchBar extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  search:{
+    width: 32, 
+    height: 32 
+  },
   search:{
     width: 130, 
     height: 32, 

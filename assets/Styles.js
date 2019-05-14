@@ -4,6 +4,13 @@ import { StyleSheet } from 'react-native';
 const background = {
   backgroundColor: '#f9f9f9'
 };
+const flex = {
+  flex: 1
+};
+
+const fullWidth = {
+  width: '100%',
+}
 
 const styles = StyleSheet.create({
     video:{
@@ -36,7 +43,16 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 24,
+    },
+    //----------------------------------
+    login:{
+      flex: 1,
+      flexDirection: 'column',
+      justifyContent: 'space-around',
+      alignItems: 'center',
     }
+    //----------------------------------
+
   });
   
-export  { background, styles }
+export  { background, styles, flex, fullWidth }
