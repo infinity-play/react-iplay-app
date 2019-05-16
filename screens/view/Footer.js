@@ -1,6 +1,6 @@
 import React from 'react';
 import { View } from 'react-native';
-import { styles } from '../../assets/Styles';
+import { styleVideo } from '../../assets/Styles';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign';
 import RateButtom from './RateButton';
@@ -8,7 +8,7 @@ import RateButtom from './RateButton';
 class Footer extends React.Component {
   render() {
     return (
-      <View style={styles.footer}>
+      <View style={styleVideo.footer}>
         <Button type="clear"
         icon={
             <Icon
