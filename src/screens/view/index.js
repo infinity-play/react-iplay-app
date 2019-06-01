@@ -4,7 +4,7 @@ import { View, Text } from 'react-native';
 import videos from '../../assets/Videos';
 import { ScrollView } from 'react-native-gesture-handler';
 import { flex, spaceBetween } from '../../assets/Styles';
-import Footer from './Footer';
+import Footer from './_footer';
 
 
 

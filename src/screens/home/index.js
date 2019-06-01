@@ -2,7 +2,7 @@ import React from 'react';
 import ButtonMenu, { Logo, MySearchBar } from '../../components/nav-menu-items';
 import { ScrollView } from 'react-native-gesture-handler';
 import { background } from '../../assets/Styles';
-import ItemHome from './ItemHome';
+import ItemHome from './_list_item';
 import videos from '../../assets/Videos';
 
 class HomeScreen extends React.Component {

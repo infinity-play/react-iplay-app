@@ -3,7 +3,7 @@ import { View } from 'react-native';
 import { styleVideo } from '../../assets/Styles';
 import { Button } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/AntDesign';
-import RateButtom from './RateButton';
+import RateButtom from './_rate_btn';
 
 class Footer extends React.Component {
   render() {

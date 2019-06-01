@@ -8,11 +8,11 @@
       "ios",
       "android"
     ],
-    "version": "0.0.1a",
+    "version": "0.0.1b",
     "orientation": "portrait",
-    "icon": "./assets/images/icon-md.png",
+    "icon": "./src/assets/images/icon-md.png",
     "splash": {
-      "image": "./assets/images/splash.png",
+      "image": "./src/assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#f9f9f9"
     },

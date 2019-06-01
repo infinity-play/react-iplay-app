@@ -7,7 +7,7 @@ import { background, flex, styleLogin, fullWidth } from '../../assets/Styles';
 
 export default class LoginScreen extends React.Component {
     static navigationOptions = {
-        title: 'Settings',
+        title: 'Join us',
     };  
 
   render() {
