@@ -13,6 +13,7 @@ import SettingsScreen from './screens/settings/SettingsScreen';
 import AboutScreen from './screens/settings/AboutScreen';
 import LoginScreen from './screens/settings/LoginScreen';
 import ViewScreen from './screens/view/ViewScreen';
+import DebugScreen from './screens/debug/DebugScreen';
 
 /*
  *  NAVIGATOR
@@ -23,7 +24,8 @@ const StackNavigator = createStackNavigator({
   Settings: {screen: SettingsScreen},
   About: {screen: AboutScreen},
   Login: {screen: LoginScreen},
-  View: {screen: ViewScreen}
+  View: {screen: ViewScreen},
+  Debug: {screen: DebugScreen}
 },{
   initialRouteName: 'Home',
 });

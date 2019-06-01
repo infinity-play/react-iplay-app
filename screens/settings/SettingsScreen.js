@@ -2,31 +2,19 @@ import React from 'react';
 import { View } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { ListItem } from 'react-native-elements';
+import { MainMenuItems } from '../../assets/MenuItems';
 
 
-class SettingsScreen extends React.Component {
+class SettingsScreen extends React.PureComponent {
   static navigationOptions = {
     title: 'Settings',
   };  
   render () {
     const { navigate } = this.props.navigation;
-    const list = [
-      {
-        title: 'Sign in',
-        icon: 'rest',
-        route: 'Login',
-      },
-      {
-        title: 'About us',
-        icon: 'infocirlceo',
-        route: 'About',
-      },
-    ];  
-
     return (
       <View>
         {
-          list.map((item, i) => (
+          MainMenuItems.map((item, i) => (
             <ListItem
               key={i}
               title={item.title}
@@ -40,8 +28,6 @@ class SettingsScreen extends React.Component {
     )
   }
 }
-
-
 
 
 
