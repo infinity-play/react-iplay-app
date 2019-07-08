@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tile, Avatar } from 'react-native-elements';
 import { View, Text } from 'react-native';
-import videos from '../../assets/Videos';
 import { ScrollView } from 'react-native-gesture-handler';
 import { flex, spaceBetween } from '../../assets/Styles';
 import Footer from './_footer';
@@ -9,9 +8,9 @@ import Footer from './_footer';
 
 
 class ViewScreen extends React.Component {
-    static navigationOptions = {
-        title: 'My Video',
-    };  
+  static navigationOptions = {
+      title: 'My Video',
+  };  
 
   render() {
     const { navigation } = this.props;

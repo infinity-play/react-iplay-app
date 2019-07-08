@@ -4,6 +4,7 @@ import { withNavigation } from 'react-navigation';
 import { styleVideo, textContainer} from '../../assets/Styles';
 
 
+
 class ItemHome extends React.Component {
   render() {
     const itemStyle = (this.props.id%2==0)? [styleVideo.item,styleVideo.itemOdd]:styleVideo.item;
