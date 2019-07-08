@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tile } from 'react-native-elements';
+import { Tile, Avatar } from 'react-native-elements';
 import { View, Text } from 'react-native';
 import videos from '../../assets/Videos';
 import { ScrollView } from 'react-native-gesture-handler';
@@ -25,6 +25,16 @@ class ViewScreen extends React.Component {
           featured
         />
         <ScrollView>
+        <View> 
+          <Avatar
+            rounded
+            source={{
+              uri:
+              'https://cdn.discordapp.com/attachments/268884978132058112/504709926359138305/default_256_256.png',
+            }}
+          />
+        </View>
+
 
         </ScrollView>
         <Footer/>

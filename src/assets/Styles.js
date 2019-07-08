@@ -34,7 +34,7 @@ const styleVideo = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     backgroundColor: '#FFF',
-    marginBottom: 10,
+    marginBottom: 5,
   },
   itemOdd:{
     backgroundColor: '#FFF'
@@ -54,7 +54,7 @@ const styleVideo = StyleSheet.create({
     color: '#999',
   },
   title: {
-    fontSize: 24,
+    fontSize: 18,
   },
   footer:{
     flex: 0.16,
