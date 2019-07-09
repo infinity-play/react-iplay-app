@@ -1,38 +1,36 @@
 import React from 'react';
-import { Tile, Avatar } from 'react-native-elements';
-import { View, Text } from 'react-native';
-import { ScrollView } from 'react-native-gesture-handler';
+import { WebView } from 'react-native-webview';
+import { ListItem } from 'react-native-elements';
+import { View, Text, ScrollView } from 'react-native';
 import { flex, spaceBetween } from '../../assets/Styles';
 import Footer from './_footer';
+import RateInfo from './_rate_info';
+
 
 
 
 class ViewScreen extends React.Component {
-  static navigationOptions = {
-      title: 'My Video',
-  };  
+  static navigationOptions = ({ navigation }) => ({
+    title: navigation.state.params.title,
+  });
 
   render() {
     const { navigation } = this.props;
     const id = navigation.getParam('id', 0);
-    const video = videos[id];
+    
     return (
       <View style={[flex, spaceBetween]}>
-        <Tile
-          imageSrc={video.thumb}
-          icon={{ name: 'play-circle', type: 'font-awesome', color: '#FFF', size: 64 }}
-          featured
+        <WebView 
+          source={{ uri: 'https://www.google.com' }}
         />
         <ScrollView>
-        <View> 
-          <Avatar
-            rounded
-            source={{
-              uri:
-              'https://cdn.discordapp.com/attachments/268884978132058112/504709926359138305/default_256_256.png',
-            }}
+          <ListItem
+            title={"Rodrigo Dornelles"}
+            subtitle={"500 followers"}
+            rightTitle={<RateInfo/>}
+            rightSubtitle={"0 views"}
+            leftAvatar={{ source: { uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" } }}
           />
-        </View>
 
 
         </ScrollView>

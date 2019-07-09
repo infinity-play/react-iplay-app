@@ -8,9 +8,9 @@
   },
   "dependencies": {
     "@expo/samples": "^2.1.1",
-    "expo": "^32.0.0",
-    "react": "16.5.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "expo": "^33.0.0",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-elements": "^1.1.0",
     "react-native-multibar": "^0.0.6",
     "react-native-nav-tabbar": "^0.0.2",

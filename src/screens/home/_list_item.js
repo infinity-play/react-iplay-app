@@ -10,7 +10,12 @@ class ItemHome extends React.Component {
     const itemStyle = (this.props.id%2==0)? [styleVideo.item,styleVideo.itemOdd]:styleVideo.item;
     const { navigate } = this.props.navigation;
     return (
-        <TouchableOpacity onPress={() => navigate("View",{id: this.props.id})}>
+        <TouchableOpacity onPress={ 
+                () => navigate("View",{
+                    id: this.props.id,
+                    title: this.props.title
+                })
+            }>
             <View style={itemStyle}>
                 <Image style={styleVideo.thumb} source={{uri: this.props.thumb}}/>
                 <View style={textContainer}>

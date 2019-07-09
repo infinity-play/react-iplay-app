@@ -12,7 +12,7 @@ class HomeScreen extends React.Component {
   };
 
   state = {
-    page: 1,
+    last: 0,
     data: [],
     refreshing: true
   }
@@ -23,18 +23,18 @@ class HomeScreen extends React.Component {
 
   async makeRemoteRequest(){
     const response = await fetch(
-      `http://rodrigo.interno.dynamika.com.br:8080/media/home?page=${this.state.page}`
+      `http://rodrigo.interno.dynamika.com.br:8080/media/home?last=${this.state.last}`
     );
     const responseJson = await response.json();
     this.setState({
       data: [...this.state.data, ...responseJson.data],
+      last: responseJson.data.pop().id,
       refreshing: false
     });
   }
 
   handlerRefresh = () => {
     this.setState({
-      page: 1,
       refreshing: true
     }, () => {
       this.makeRemoteRequest();
@@ -42,11 +42,7 @@ class HomeScreen extends React.Component {
   }
 
   handlerLoadMore = () => {
-    this.setState({
-      page: (this.state.page + 1)
-    }, () => {
-      this.makeRemoteRequest();
-    });
+    this.makeRemoteRequest();
   }
 
   _renderItem = ({item}) => {
