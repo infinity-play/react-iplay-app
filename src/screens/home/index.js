@@ -17,8 +17,8 @@ class HomeScreen extends React.Component {
     refreshing: true
   }
 
-  async componentDidMount(){
-    await this.makeRemoteRequest();
+  componentDidMount(){
+    this.makeRemoteRequest();
   }
 
   async makeRemoteRequest(){
