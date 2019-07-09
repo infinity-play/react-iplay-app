@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { withNavigation } from 'react-navigation';
 import { Button, Icon, SearchBar } from 'react-native-elements'; 
 
@@ -22,34 +22,6 @@ class ButtonMenu extends React.Component {
     );
   }
 }
-
-class MyButton extends React.Component {
-  render() {
-    return (
-      <Button
-          title={this.props.title}
-          type="clear"
-        />
-    );
-  }
-}
-
-class Logo extends React.Component {
-  render() {
-    const size = {width: this.props.size, height: this.props.size};
-    return (
-      <Image 
-        style={size}
-        source={require('../assets/images/icon-md.png')}
-      />
-    );
-  }
-}
-
-Logo.defaultProps = {
-  size: 32
-};
-
 
 class MySearchBar extends React.Component {
   state = {
@@ -91,7 +63,5 @@ const styles = StyleSheet.create({
 export default withNavigation(ButtonMenu);
 
 export{
-  MySearchBar,
-  MyButton,
-  Logo,
+  MySearchBar
 }

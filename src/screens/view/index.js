@@ -5,7 +5,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { flex, spaceBetween } from '../../assets/Styles';
 import Footer from './_footer';
 import RateInfo from './_rate_info';
-import { LoadingScreen } from '../loading';
+import { Loading } from '../../components';
 
 
 
@@ -34,8 +34,8 @@ class ViewScreen extends React.Component {
     });
   }
 
-  _loading = () => {
-    return (<LoadingScreen/>);
+  _loading = (mode) => {
+    return (<Loading mode={mode}/>);
   }
 
   _view = (item) => {
@@ -43,6 +43,8 @@ class ViewScreen extends React.Component {
       <View style={[flex, spaceBetween]}>
         <WebView 
           allowsFullscreenVideo
+          startInLoadingState={true}
+          renderLoading={() => this._loading(1)}
           source={{ uri: 'https://www.youtube.com/embed/NW3WLBagn_4' }}
         />
         <ScrollView>

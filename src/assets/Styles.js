@@ -4,8 +4,13 @@ import { StyleSheet } from 'react-native';
 const background = {
   backgroundColor: '#f9f9f9'
 };
+
 const flex = {
   flex: 1
+};
+
+const backgroundBlack = {
+  backgroundColor: '#000'
 };
 
 const fullWidth = {
@@ -20,7 +25,11 @@ const spaceBetween = {
 };
 
 const center = {
-  justifyContent: 'center'
+  justifyContent: 'center',
+};
+
+const alignCenter = {
+  alignItems: 'center',
 };
 
 const textContainer = {
@@ -78,11 +87,13 @@ const styleLogin = StyleSheet.create({
 });
   
 export  { 
+  backgroundBlack,
   background, 
   flex,
   fullWidth,
   fullHeight,
   spaceBetween,
+  alignCenter,
   center,
   textContainer,
   styleVideo,

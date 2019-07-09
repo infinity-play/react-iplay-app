@@ -1,6 +1,7 @@
 import React from 'react';
-import ButtonMenu, { Logo, MySearchBar } from '../../components/nav-menu-items';
 import { FlatList } from 'react-native';
+import ButtonMenu, { MySearchBar } from '../../components/nav-menu-items';
+import { Logo } from '../../components';
 import { background } from '../../assets/Styles';
 import ItemHome from './_list_item';
 
@@ -48,7 +49,7 @@ class HomeScreen extends React.Component {
   handlerLoadMore = () => {
     this.makeRemoteRequest();
   }
-
+  
   _renderItem = ({item}) => {
     return (
       <ItemHome 
