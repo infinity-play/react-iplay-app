@@ -39,21 +39,23 @@ class ViewScreen extends React.Component {
   }
 
   _view = (item) => {
+    const origin = item.origin;
     return (
       <View style={[flex, spaceBetween]}>
         <WebView 
-          allowsFullscreenVideo
+          useWebKit={true}
+          allowsInlineMediaPlayback={true}
           startInLoadingState={true}
           renderLoading={() => this._loading(1)}
-          source={{ uri: 'https://www.youtube.com/embed/NW3WLBagn_4' }}
+          source={{ uri: item.source }}
         />
         <ScrollView>
           <ListItem
-            title={item.creator}
-            subtitle={"500 followers"}
+            title={origin.name}
+            subtitle={`${origin.follows} followers`}
             rightTitle={<RateInfo/>}
             rightSubtitle={`${item.views} views`}
-            leftAvatar={{ source: { uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" } }}
+            leftAvatar={{ source: { uri: origin.avatar } }}
           />
           <Text>
             {item.description}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Image } from 'react-native';
-import { alignCenter, center, flex, backgroundBlack } from '../assets/Styles';
+import { alignCenter, center, flex, backgroundBlack, styleLogin } from '../assets/Styles';
 import { ActivityIndicator } from 'react-native';
 
 class Loading extends React.PureComponent {
@@ -13,9 +13,9 @@ class Loading extends React.PureComponent {
     }
   
     render() {
-    background = this.props.mode?backgroundBlack:null;
+    styles = this.props.mode ? [center, flex, backgroundBlack]:styleLogin.login;
     return (
-      <View style ={[alignCenter, center, flex, background]}>
+      <View style ={styles}>
           {this._loading(this.props.mode)}
       </View>
     );
