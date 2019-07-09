@@ -5,6 +5,7 @@ import { View, Text, ScrollView } from 'react-native';
 import { flex, spaceBetween } from '../../assets/Styles';
 import Footer from './_footer';
 import RateInfo from './_rate_info';
+import { LoadingScreen } from '../loading';
 
 
 
@@ -34,10 +35,10 @@ class ViewScreen extends React.Component {
   }
 
   _loading = () => {
-    return (<Text>carregando</Text>);
+    return (<LoadingScreen/>);
   }
 
-  _view = () => {
+  _view = (item) => {
     return (
       <View style={[flex, spaceBetween]}>
         <WebView 
@@ -46,14 +47,14 @@ class ViewScreen extends React.Component {
         />
         <ScrollView>
           <ListItem
-            title={this.state.data.creator}
+            title={item.creator}
             subtitle={"500 followers"}
             rightTitle={<RateInfo/>}
-            rightSubtitle={`${this.state.data.views} views`}
+            rightSubtitle={`${item.views} views`}
             leftAvatar={{ source: { uri: "https://s3.amazonaws.com/uifaces/faces/twitter/adhamdannaway/128.jpg" } }}
           />
           <Text>
-            {this.state.data.description}
+            {item.description}
           </Text>
 
         </ScrollView>
@@ -65,7 +66,7 @@ class ViewScreen extends React.Component {
     if(this.state.data === null){
       return this._loading();
     }
-    return this._view();
+    return this._view(this.state.data);
   }
 }
 

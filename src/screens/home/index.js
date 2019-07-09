@@ -26,19 +26,23 @@ class HomeScreen extends React.Component {
       `http://rodrigo.interno.dynamika.com.br:8080/media/home?last=${this.state.last}`
     );
     const responseJson = await response.json();
-    this.setState({
-      data: [...this.state.data, ...responseJson.data],
-      last: responseJson.data.pop().id,
-      refreshing: false
-    });
+    if(responseJson.data.length > 0){
+      this.setState({
+        data: [...this.state.data, ...responseJson.data],
+        last: responseJson.data.pop().id,
+        refreshing: false,
+      });
+    }
   }
 
   handlerRefresh = () => {
-    this.setState({
-      refreshing: true
-    }, () => {
-      this.makeRemoteRequest();
-    });
+      this.setState({
+        last: 0,
+        data: [],
+        refreshing: true
+      }, () => {
+        this.makeRemoteRequest();
+      });
   }
 
   handlerLoadMore = () => {
