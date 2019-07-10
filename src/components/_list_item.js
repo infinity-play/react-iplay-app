@@ -7,7 +7,7 @@ import { styleVideo, textContainer} from '../assets/Styles';
 
 class ItemHome extends React.Component {
   render() {
-    const itemStyle = (this.props.id%2==0)? [styleVideo.item,styleVideo.itemOdd]:styleVideo.item;
+    const itemStyle = (this.props.id%2 === false)? [styleVideo.item,styleVideo.itemOdd]:styleVideo.item;
     const { push } = this.props.navigation;
     return (
         <TouchableOpacity onPress={ 

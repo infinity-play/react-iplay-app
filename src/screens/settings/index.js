@@ -24,8 +24,7 @@ class SettingsScreen extends React.PureComponent {
           ))
         }
       </View>
-
-    )
+    );
   }
 }
 

@@ -5,7 +5,7 @@ class DebugScreen extends React.Component {
     static navigationOptions = {
         
     };
-
+    /*
     componentDidMount = () => {
         fetch('https://raw.githubusercontent.com/RodrigoDornelles/iplay-themes/master/main.json',{
             method: 'GET'
@@ -19,7 +19,7 @@ class DebugScreen extends React.Component {
             alert(error);
         });
     }
-
+    */
     render() {
         return (
         <View>

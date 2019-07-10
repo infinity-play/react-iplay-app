@@ -117,4 +117,4 @@ export  {
   tabContainer,
   container,
   player
-}
+};

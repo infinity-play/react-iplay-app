@@ -7,15 +7,15 @@ class Loading extends React.PureComponent {
     
     _loading = (mode) => {
         if(mode){
-            return <ActivityIndicator/>
+            return <ActivityIndicator/>;
         }
-        return <Logo size={124}/>
+        return <Logo size={124}/>;
     }
   
     render() {
-    styles = this.props.mode ? [center, flex, backgroundBlack]:styleLogin.login;
+    const styles = this.props.mode ? [center, flex, backgroundBlack]:styleLogin.login;
     return (
-      <View style ={styles}>
+      <View style={styles}>
           {this._loading(this.props.mode)}
       </View>
     );
@@ -102,5 +102,5 @@ export {
     Loading,
     Logo,
     Search
-}
+};
   

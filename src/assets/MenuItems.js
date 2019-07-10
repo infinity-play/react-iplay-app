@@ -22,4 +22,4 @@ const MainMenuItems = [
 
 export {
     MainMenuItems
-}
+};
