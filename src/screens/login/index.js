@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign';
 import { Input, Button } from 'react-native-elements';
-import { Logo } from '../../components/nav-menu-items';
+import { Logo } from '../../components';
 import { background, flex, styleLogin, fullWidth } from '../../assets/Styles';
 
 export default class LoginScreen extends React.Component {
@@ -12,8 +12,7 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return (
-      <View style ={[background, flex]}>
-        <View style={styleLogin.login}>
+        <View style={[styleLogin.login, background]}>
           <Logo size={124}/>
           <Input
             placeholder='LOGIN'
@@ -40,7 +39,6 @@ export default class LoginScreen extends React.Component {
             title="Sign In"
           />
         </View>
-      </View>
     );
   }
 }

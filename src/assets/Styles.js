@@ -65,6 +65,9 @@ const styleVideo = StyleSheet.create({
   title: {
     fontSize: 18,
   },
+  description: {
+    fontSize: 12,
+  },
   footer:{
     flex: 0.16,
     paddingHorizontal: 15,

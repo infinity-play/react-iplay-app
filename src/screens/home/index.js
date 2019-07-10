@@ -1,15 +1,15 @@
 import React from 'react';
 import { FlatList } from 'react-native';
-import ButtonMenu, { MySearchBar } from '../../components/nav-menu-items';
-import { Logo } from '../../components';
+import { Logo, Search } from '../../components';
 import { background } from '../../assets/Styles';
+import ButtonMenu from '../../components/_button_menu';
 import ItemHome from './_list_item';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
     headerLeft: <ButtonMenu/>,
     headerTitle: <Logo/>,
-    headerRight: <MySearchBar/>
+    headerRight: <Search/>
   };
 
   state = {
@@ -17,6 +17,7 @@ class HomeScreen extends React.Component {
     data: [],
     refreshing: true
   }
+
 
   componentDidMount(){
     this.makeRemoteRequest();

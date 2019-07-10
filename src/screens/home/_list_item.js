@@ -20,7 +20,7 @@ class ItemHome extends React.Component {
                 <Image style={styleVideo.thumb} source={{uri: this.props.thumb}}/>
                 <View style={textContainer}>
                     <Text style={styleVideo.title} >{this.props.title}</Text>
-                    <Text>{this.props.description}</Text>
+                    <Text style={styleVideo.description}>{this.props.description}</Text>
                     <View style={styleVideo.info}>
                         <Text style={styleVideo.detail}>{this.props.creator}</Text>
                         <Text style={styleVideo.detail}>{this.props.views} Views</Text>

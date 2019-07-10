@@ -1,7 +1,7 @@
 import React from 'react';
-import { View, Image } from 'react-native';
-import { alignCenter, center, flex, backgroundBlack, styleLogin } from '../assets/Styles';
-import { ActivityIndicator } from 'react-native';
+import { View, Image, ActivityIndicator } from 'react-native';
+import { Button, Icon } from 'react-native-elements'; 
+import { center, flex, backgroundBlack, styleLogin } from '../assets/Styles';
 
 class Loading extends React.PureComponent {
     
@@ -37,9 +37,70 @@ class Logo extends React.PureComponent {
 Logo.defaultProps = {
     size: 32
 };
+
+
+class Search extends React.PureComponent {
+  render() {
+    //const { navigate } = this.props.navigation;
+    return (
+      <Button
+          type="clear"
+          //onPress={() => navigate("Settings")}
+          icon={
+            <Icon
+              name="search"
+              size={32} 
+              color="#333"
+            />
+          }  
+        />
+    );
+  }
+}
+
+/*
+
+class MySearchBar extends React.Component {
+  state = {
+    search: '',
+  };
+
+  updateSearch = search => {
+    this.setState({ search });
+  };
+
+  render() {
+    const { search } = this.state;
+
+    return (
+      <SearchBar
+        platform="ios"
+        containerStyle={styles.search}
+        cancelButtonTitle=""
+        placeholder="Search..."
+        onChangeText={this.updateSearch}
+        value={search}
+      />
+    );
+  }
+}
+
+const styles = StyleSheet.create({
+  search:{
+    width: 32, 
+    height: 32 
+  },
+  search:{
+    width: 130, 
+    height: 32, 
+    borderWidth: 0,
+  },
+});
+*/
   
 export {
     Loading,
-    Logo
+    Logo,
+    Search
 }
   
