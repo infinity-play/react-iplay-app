@@ -38,6 +38,15 @@ const textContainer = {
   marginHorizontal: 5,   
 };
 
+const container = {
+  margin: 10,
+  marginBottom: 0,
+};
+
+const player = {
+  minHeight: 200,
+};
+
 const styleVideo = StyleSheet.create({
   item:{
     flex: 1,
@@ -101,4 +110,6 @@ export  {
   textContainer,
   styleVideo,
   styleLogin,
+  container,
+  player
 }

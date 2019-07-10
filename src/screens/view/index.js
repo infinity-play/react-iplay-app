@@ -2,9 +2,10 @@ import React from 'react';
 import { WebView } from 'react-native-webview';
 import { ListItem } from 'react-native-elements';
 import { View, Text, ScrollView } from 'react-native';
-import { flex, spaceBetween } from '../../assets/Styles';
+import { flex, spaceBetween, player } from '../../assets/Styles';
 import Footer from './_footer';
 import RateInfo from './_rate_info';
+import Tabs from './_tabs';
 import { Loading } from '../../components';
 
 
@@ -34,33 +35,46 @@ class ViewScreen extends React.Component {
     });
   }
 
+  _player = (source) => {
+    return (
+      <WebView 
+          useWebKit={true}
+          allowsInlineMediaPlayback={true}
+          startInLoadingState={true}
+          renderLoading={() => this._loading(1)}
+          source={{ uri: source }}
+        />
+    );
+  }
+
+  _creator = (origin, views) => {
+    return (
+      <ListItem
+        title={origin.name}
+        subtitle={`${origin.follows} followers`}
+        rightTitle={<RateInfo/>}
+        rightSubtitle={`${views} views`}
+        leftAvatar={{ source: { uri: origin.avatar } }}
+      />
+    );
+  }
+
   _loading = (mode) => {
     return (<Loading mode={mode}/>);
   }
 
   _view = (item) => {
-    const origin = item.origin;
     return (
       <View style={[flex, spaceBetween]}>
-        <WebView 
-          useWebKit={true}
-          allowsInlineMediaPlayback={true}
-          startInLoadingState={true}
-          renderLoading={() => this._loading(1)}
-          source={{ uri: item.source }}
-        />
+        <View style={player}>
+          {this._player(item.source)}
+        </View>
         <ScrollView>
-          <ListItem
-            title={origin.name}
-            subtitle={`${origin.follows} followers`}
-            rightTitle={<RateInfo/>}
-            rightSubtitle={`${item.views} views`}
-            leftAvatar={{ source: { uri: origin.avatar } }}
+          {this._creator(item.origin, item.views)}
+          <Tabs
+            id={this.props.navigation.state.params.id}
+            data={item}
           />
-          <Text>
-            {item.description}
-          </Text>
-
         </ScrollView>
       </View>
     );
