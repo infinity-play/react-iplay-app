@@ -52,7 +52,7 @@ export default class ListView extends React.Component {
           thumb={item.thumb}
           id={item.id}           
         />
-    )
+    );
   }
 
   render() {
