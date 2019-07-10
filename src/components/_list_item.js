@@ -1,17 +1,17 @@
 import React from 'react';
 import { View, Text, Image, TouchableOpacity } from 'react-native';
 import { withNavigation } from 'react-navigation';
-import { styleVideo, textContainer} from '../../assets/Styles';
+import { styleVideo, textContainer} from '../assets/Styles';
 
 
 
 class ItemHome extends React.Component {
   render() {
     const itemStyle = (this.props.id%2==0)? [styleVideo.item,styleVideo.itemOdd]:styleVideo.item;
-    const { navigate } = this.props.navigation;
+    const { push } = this.props.navigation;
     return (
         <TouchableOpacity onPress={ 
-                () => navigate("View",{
+                () => push("View",{
                     id: this.props.id,
                     title: this.props.title
                 })

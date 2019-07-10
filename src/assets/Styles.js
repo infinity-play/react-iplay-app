@@ -39,8 +39,12 @@ const textContainer = {
 };
 
 const container = {
+  marginHorizontal: 10,
+};
+
+const tabContainer = {
   margin: 10,
-  marginBottom: 0,
+  marginBottom: 20,
 };
 
 const player = {
@@ -110,6 +114,7 @@ export  {
   textContainer,
   styleVideo,
   styleLogin,
+  tabContainer,
   container,
   player
 }

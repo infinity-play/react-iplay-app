@@ -1,9 +1,7 @@
 import React from 'react';
-import { FlatList } from 'react-native';
 import { Logo, Search } from '../../components';
-import { background } from '../../assets/Styles';
 import ButtonMenu from '../../components/_button_menu';
-import ItemHome from './_list_item';
+import ListView from '../../components/_list_view';
 
 class HomeScreen extends React.Component {
   static navigationOptions = {
@@ -12,69 +10,9 @@ class HomeScreen extends React.Component {
     headerRight: <Search/>
   };
 
-  state = {
-    last: 0,
-    data: [],
-    refreshing: true
-  }
-
-
-  componentDidMount(){
-    this.makeRemoteRequest();
-  }
-
-  async makeRemoteRequest(){
-    const response = await fetch(
-      `http://rodrigo.interno.dynamika.com.br:8080/media/home?last=${this.state.last}`
-    );
-    const responseJson = await response.json();
-    if(responseJson.data.length > 0){
-      this.setState({
-        data: [...this.state.data, ...responseJson.data],
-        last: responseJson.data.pop().id,
-        refreshing: false,
-      });
-    }
-  }
-
-  handlerRefresh = () => {
-      this.setState({
-        last: 0,
-        data: [],
-        refreshing: true
-      }, () => {
-        this.makeRemoteRequest();
-      });
-  }
-
-  handlerLoadMore = () => {
-    this.makeRemoteRequest();
-  }
-  
-  _renderItem = ({item}) => {
-    return (
-      <ItemHome 
-          title={item.title}
-          description={item.description}
-          views={item.views}
-          creator={item.creator}
-          thumb={item.thumb}
-          id={item.id}           
-        />
-    )
-  }
-
   render() {
     return (
-      <FlatList style={background}
-          data= {this.state.data}
-          renderItem = {this._renderItem}
-          keyExtractor = {(item) => item.id.toString()}
-          refreshing = {this.state.refreshing}
-          onRefresh = {this.handlerRefresh}
-          onEndReached = {this.handlerLoadMore}
-          onEndReachedThreshold = {0}
-      />
+      <ListView/>
     );
   }
 }
