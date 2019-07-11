@@ -55,11 +55,11 @@ const styleVideo = StyleSheet.create({
   item:{
     flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#FFF',
-    marginBottom: 5,
+    backgroundColor: '#f9f9f9',
+    marginBottom: 0,
   },
   itemOdd:{
-    backgroundColor: '#FFF'
+    backgroundColor: '#f6f6f6'
   },
   thumb:{
     flex: 1,
@@ -72,14 +72,17 @@ const styleVideo = StyleSheet.create({
     alignItems: 'flex-end',
   },
   detail:{
-    fontSize: 10,
+    fontSize: 9,
     color: '#999',
   },
   title: {
-    fontSize: 18,
+    fontWeight: 'bold',
+    fontSize: 11,
+    maxHeight: 28,
   },
   description: {
-    fontSize: 12,
+    fontSize: 11,
+    maxHeight: 44,
   },
   footer:{
     flex: 0.16,

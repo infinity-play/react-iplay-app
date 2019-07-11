@@ -16,10 +16,10 @@ export default class ListView extends React.Component {
 
   async makeRemoteRequest(){
     const response = await fetch(
-      `http://rodrigo.interno.dynamika.com.br:8080/media/home?last=${this.state.last}`
+      `http://rodrigo.interno.dynamika.com.br:8080/media/home?MediaSearch[last]=${this.state.last}`
     );
     const responseJson = await response.json();
-    if(responseJson.data.length > 0){
+    if(responseJson.status == 200){
       this.setState({
         data: [...this.state.data, ...responseJson.data],
         last: responseJson.data.pop().id,
@@ -42,7 +42,7 @@ export default class ListView extends React.Component {
     this.makeRemoteRequest();
   }
   
-  _renderItem = ({item}) => {
+  _renderItem = ({item}, index) => {
     return (
       <ItemHome 
           title={item.title}
@@ -50,7 +50,8 @@ export default class ListView extends React.Component {
           views={item.views}
           creator={item.creator}
           thumb={item.thumb}
-          id={item.id}           
+          id={item.id}       
+          index={index}    
         />
     );
   }
@@ -60,7 +61,7 @@ export default class ListView extends React.Component {
       <FlatList style={background}
           data= {this.state.data}
           renderItem = {this._renderItem}
-          keyExtractor = {(item) => item.id.toString()}
+          keyExtractor = {(item, index) => item.id.toString()}
           refreshing = {this.state.refreshing}
           onRefresh = {this.handlerRefresh}
           onEndReached = {this.handlerLoadMore}
