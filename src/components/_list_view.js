@@ -19,7 +19,7 @@ export default class ListView extends React.Component {
       `http://rodrigo.interno.dynamika.com.br:8080/media/home?MediaSearch[last]=${this.state.last}`
     );
     const responseJson = await response.json();
-    if(responseJson.status == 200){
+    if(responseJson.status === 200){
       this.setState({
         data: [...this.state.data, ...responseJson.data],
         last: responseJson.data.pop().id,
